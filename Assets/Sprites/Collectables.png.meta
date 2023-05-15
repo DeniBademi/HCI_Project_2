@@ -1,9 +1,105 @@
 fileFormatVersion: 2
-guid: 57ba54abe52784f469e6bde06bd15f86
+guid: 8634bd8c76a71fc4d9c051f82f1989e9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3738684955690558537
+    second: Collectables_0
+  - first:
+      213: 1261733811358607136
+    second: Collectables_1
+  - first:
+      213: -7824734652087929343
+    second: Collectables_2
+  - first:
+      213: -8766860720156965329
+    second: Collectables_3
+  - first:
+      213: 3350666890990760709
+    second: Collectables_4
+  - first:
+      213: 2860087585957106871
+    second: Collectables_5
+  - first:
+      213: 9069713878209895214
+    second: Collectables_6
+  - first:
+      213: 1352234871116111741
+    second: Collectables_7
+  - first:
+      213: -7724520551472137211
+    second: Collectables_8
+  - first:
+      213: -4724468803454771425
+    second: Collectables_9
+  - first:
+      213: -4648440695713212452
+    second: Collectables_10
+  - first:
+      213: -8725750359578609395
+    second: Collectables_11
+  - first:
+      213: -6247349163713191825
+    second: Collectables_12
+  - first:
+      213: -8922662067349693522
+    second: Collectables_13
+  - first:
+      213: 359376594862770807
+    second: Collectables_14
+  - first:
+      213: -847350788626073936
+    second: Collectables_15
+  - first:
+      213: 7544324298034900758
+    second: Collectables_16
+  - first:
+      213: 8538991649753689354
+    second: Collectables_17
+  - first:
+      213: -4490538302015530980
+    second: Collectables_18
+  - first:
+      213: -375979359711859290
+    second: Collectables_19
+  - first:
+      213: -1748303392111153455
+    second: Collectables_20
+  - first:
+      213: -6430287240871611842
+    second: Collectables_21
+  - first:
+      213: 4300570449000280627
+    second: Collectables_22
+  - first:
+      213: -6937343013996844583
+    second: Collectables_23
+  - first:
+      213: -1509059505877207958
+    second: Collectables_24
+  - first:
+      213: 3809783414468792453
+    second: Collectables_25
+  - first:
+      213: 8806730974311673436
+    second: Collectables_26
+  - first:
+      213: -3017717205718001711
+    second: Collectables_27
+  - first:
+      213: 2516968091667460935
+    second: Collectables_28
+  - first:
+      213: -5887993666593571530
+    second: Collectables_29
+  - first:
+      213: 7627819455201935574
+    second: Collectables_30
+  - first:
+      213: -3931396552695514780
+    second: Collectables_31
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -23,8 +119,6 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
-  vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,21 +127,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
-    aniso: 1
-    mipBias: 0
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -56,21 +150,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  ignorePngGamma: 0
-  applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +171,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -90,11 +179,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,11 +191,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +204,679 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Collectables_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e085085e9b20b43afa1d96d085fead
+      internalID: 3738684955690558537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 48
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5092e02b1aaab4dbb550eb13f4be39
+      internalID: 1261733811358607136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 48
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639cf76e895f8c04aa05dcb70937a73b
+      internalID: -7824734652087929343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 48
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5737d51394f373540842528dac9c44d1
+      internalID: -8766860720156965329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ed26018a45cb641ae2aefa99d2180d
+      internalID: 3350666890990760709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 48
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd800b3db7fe694bbb9683a00aec738
+      internalID: 2860087585957106871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 48
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f26d58126a3c74d84eb1cbd8a7ac9d
+      internalID: 9069713878209895214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_7
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 48
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48000ed56482c8b42a8ccb1b15e1351f
+      internalID: 1352234871116111741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff374374298c7f40b489bc0652d315e
+      internalID: -7724520551472137211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_9
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae78e2489bf9784784bb0264cf7c561
+      internalID: -4724468803454771425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee92726a24e22b4aa97e15bd1dee87f
+      internalID: -4648440695713212452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_11
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c131095b4a1fafc4a9bb971951f11268
+      internalID: -8725750359578609395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea418073ea105404c9f561c4edd534de
+      internalID: -6247349163713191825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_13
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fad9caed0d63346ad78fd16a1e2a7c
+      internalID: -8922662067349693522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_14
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a65e713e84cc849a3cdd23e0732d5c
+      internalID: 359376594862770807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 33
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e845c2bb4cf8c5c4f9f329866d77a276
+      internalID: -847350788626073936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8152bfa03209c54cadc8af2314123fd
+      internalID: 7544324298034900758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_17
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d2b49bbd7a2754dbd5bd7ded4660d9
+      internalID: 8538991649753689354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_18
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2afaaf8eabd4eb4d8da32ea4b046376
+      internalID: -4490538302015530980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_19
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b114ae536315449aea6a9e74ae7246
+      internalID: -375979359711859290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_20
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c853538779d6322438865e416ea09cc6
+      internalID: -1748303392111153455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_21
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35083a99592fc8541a2c6fc526095cd8
+      internalID: -6430287240871611842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_22
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc3b7d9eb825d3478df90af831c2298
+      internalID: 4300570449000280627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_23
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 17
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e930ecb4c85454a9009f930ce24c73
+      internalID: -6937343013996844583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3126c95fae80a0142b7fac4f8a334835
+      internalID: -1509059505877207958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_25
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dba901c1bb97e74f8e58de4112ad497
+      internalID: 3809783414468792453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_26
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c157f1b1be8c6a41a9443ae12f20298
+      internalID: 8806730974311673436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_27
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8b78f97fd25044fa15e99ca025d1d3
+      internalID: -3017717205718001711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_28
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 784135cc20662a54f8041e9ac0874943
+      internalID: 2516968091667460935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_29
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7120f7683283747bc31c480d06d937
+      internalID: -5887993666593571530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_30
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a73f220c358bb4483229a0987d1515
+      internalID: 7627819455201935574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Collectables_31
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cf5d416830d8742b5bb3b4ea9927a4
+      internalID: -3931396552695514780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +887,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

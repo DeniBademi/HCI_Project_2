@@ -62,7 +62,6 @@ public class PlayerJump : PlayerStates
         float jumpForce = Mathf.Sqrt(jumpHeight * 2f * Mathf.Abs(_playerController.Gravity));
         _playerController.SetVerticalForce(jumpForce);
         _playerController.Conditions.IsJumping = true;
-        SoundManager.Instance.PlaySound(AudioLibrary.Instance.JumpClip);
     }
 
     /// <summary>

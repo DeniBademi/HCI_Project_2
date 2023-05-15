@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: MAPS_77
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1904267953, guid: 75e6019cff1b44aa193fc86eef6bbffa, type: 3}
+  m_Sprite: {fileID: -5823986540138048861, guid: c7537554e194ed94890beb06659e7255,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
