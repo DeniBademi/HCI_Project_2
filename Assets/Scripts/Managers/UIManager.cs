@@ -4,18 +4,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : Singleton<UIManager>
 {
     [Header("Settings")] 
     [SerializeField] private Image fuelImage;
     [SerializeField] private GameObject[] playerLifes;
+    public TMP_Text name;
+    public string nameValue = "Player One";
+
 
     [Header("Coins")] 
     [SerializeField] private TextMeshProUGUI coinTMP;
     
     private float _currentJetpackFuel;
     private float _jetpackFuel;
+
+    private void Start()
+    {
+        name.text = "Name:" + nameValue;
+    }
     
     private void Update()
     {

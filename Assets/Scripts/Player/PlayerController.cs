@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -62,11 +63,14 @@ public class PlayerController : MonoBehaviour
     private float _wallFallMultiplier;
     
     #endregion
+
+   // public TMP_Text name;
+    public string playername = "Player One";
     
     private void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
-        
+        //name.text = playername;
         _conditions = new PlayerConditions();
         _conditions.Reset();
     }

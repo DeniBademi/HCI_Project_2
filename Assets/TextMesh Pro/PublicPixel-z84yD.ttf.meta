@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: c06cf5c825a3a49f1ae3bb04e726f907
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Public Pixel
+  fontNames:
+  - Public Pixel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: dc842aa0b8b514fb4aa09158b0509513, type: 3}
+  - {fileID: 12800000, guid: 7af045b209afc4fddba18817c22d40af, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
