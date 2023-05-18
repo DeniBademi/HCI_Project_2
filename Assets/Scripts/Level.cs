@@ -8,4 +8,5 @@ public class Level : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     public Transform SpawnPoint => spawnPoint;
+    public bool isFinalLevel = false;
 }

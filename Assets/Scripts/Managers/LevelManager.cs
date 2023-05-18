@@ -37,6 +37,10 @@ public class LevelManager : MonoBehaviour
         {
             RevivePlayer();
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Time.timeScale = 1 - Time.timeScale;
+        }
     }
 
     private void InitLevel(int levelIndex)
@@ -46,7 +50,15 @@ public class LevelManager : MonoBehaviour
             level.gameObject.SetActive(false);
         }
         
-        levels[levelIndex].gameObject.SetActive(true);
+        if(levels.Length > levelIndex)
+            levels[levelIndex].gameObject.SetActive(true);
+        else
+        {
+            //GameManager.Instance.GameState = GameManager.GameStates.GameOver;
+            var score = HighScoreManager.Instance.CalculateScore();
+            Debug.Log("Score: " + score);
+            HighScoreManager.Instance.AddHighScore(score);
+        }
     }
     
     /// <summary>

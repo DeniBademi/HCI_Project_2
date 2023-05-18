@@ -48,4 +48,10 @@ public class CoinManager : Singleton<CoinManager>
         PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
         PlayerPrefs.Save();
     }
+    public void ResetCoins()
+    {
+        TotalCoins = 0;
+        PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
+        PlayerPrefs.Save();
+    }
 }

@@ -33,6 +33,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         ResetLife();
+        HighScoreManager.Instance.SetStartTime();
     }
 
     private void Update()
@@ -79,6 +80,8 @@ public class Health : MonoBehaviour
         _currentLifes = 0;
         UpdateLifesUI();
         OnDeath?.Invoke(gameObject.GetComponent<PlayerMotor>());
+        HighScoreManager.Instance.AddHighScore(CoinManager.Instance.TotalCoins);
+        CoinManager.Instance.ResetCoins();
     }
     
     /// <summary>
