@@ -12,11 +12,18 @@ public class CheckPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            OnLevelCompleted?.Invoke(levelIndex);
-            //Debug.Log(levelIndex.ToString());
-            //denis
+        if (other.CompareTag("Player")){
+            GameObject.Find("Checkpoint").GetComponent<BoxCollider2D>().isTrigger = true;
         }
+
     }
+
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         // OnLevelCompleted?.Invoke(levelIndex);
+    //         // Debug.Log(levelIndex.ToString());
+    //     }
+    // }
 }
