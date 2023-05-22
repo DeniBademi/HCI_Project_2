@@ -15,7 +15,8 @@ public class CheckPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnLevelCompleted?.Invoke(levelIndex);
-            Debug.Log(levelIndex.ToString());
+            //Debug.Log(levelIndex.ToString());
+            //denis
         }
     }
 }
