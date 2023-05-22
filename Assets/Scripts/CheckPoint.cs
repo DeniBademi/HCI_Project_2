@@ -6,24 +6,22 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     public static Action<int> OnLevelCompleted;
+    private Timer timer;
     
     [Header("Settings")] 
     [SerializeField] private int levelIndex;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")){
-            GameObject.Find("Checkpoint").GetComponent<BoxCollider2D>().isTrigger = true;
+        if (other.CompareTag("Player"))
+        {
+            if(levelIndex == 2){
+                Debug.Log("Hello World");
+                timer = GameObject.Find("Canvas").GetComponent<Timer>();
+                timer.Finish();
+            }
+            OnLevelCompleted?.Invoke(levelIndex);
+            Debug.Log(levelIndex.ToString());
         }
-
     }
-
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         // OnLevelCompleted?.Invoke(levelIndex);
-    //         // Debug.Log(levelIndex.ToString());
-    //     }
-    // }
 }

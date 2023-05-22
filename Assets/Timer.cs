@@ -8,30 +8,67 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text textTimer;
     private float startTime;
-    //private bool finnished = false;
+    private bool isRunning = false;
+    private BoxCollider2D checkpointCollider;
 
-    // Start is called before the first frame update
-    void Start()
+    private static Timer instance;
+
+    public static Timer Instance
+    {
+        get { return instance; }
+    }
+
+    private void Awake(){
+
+         if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
+    public void StartTimer()
     {
         startTime = Time.time;
+        isRunning = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StopTimer()
     {
-        if(GameObject.Find("Checkpoint").GetComponent<BoxCollider2D>().isTrigger == true){
-            Finnish();
+        isRunning = false;
+    }
+
+    void Start()
+    {
+        StartTimer();
+        GameObject checkpointObj = GameObject.Find("Checkpoint");
+        if (checkpointObj != null){
+            checkpointCollider = checkpointObj.GetComponent<BoxCollider2D>();
+        }
+    }
+
+    private void Update()
+    {
+        if (isRunning)
+        {
+            float elapsedTime = Time.time - startTime;
+            string minutes = ((int)elapsedTime / 60).ToString();
+            string seconds = (elapsedTime % 60).ToString("f2");
+            textTimer.text = minutes + ":" + seconds;
+        }
+
+        if (checkpointCollider != null & !isRunning)
+        {
             return;
         }
-        float t = Time.time - startTime;
-
-        string minutes = ((int) t / 60).ToString();
-        string seconds = (t % 60).ToString("f2");
-        textTimer.text = minutes + ":" + seconds;
     }
 
-    public void Finnish(){
-        //finnished = true;
+    public void Finish(){
+        StopTimer();
         textTimer.color = Color.red;
     }
 }

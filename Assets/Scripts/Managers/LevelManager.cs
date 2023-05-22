@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     
     private PlayerMotor _currentPlayer;
     private int _nextLevel;
-    
+
     private void Awake()
     {
         InitLevel(startingLevel);
