@@ -44,6 +44,9 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        //The time starts counting even in the StartingMenu because the
+        // canvas is active and the function start() is being executed
+        // even though we are not in the game yet. 
         StartTimer();
         GameObject checkpointObj = GameObject.Find("Checkpoint");
         if (checkpointObj != null){

@@ -12,6 +12,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Image fuelImage;
     [SerializeField] private GameObject[] playerLifes;
     public TMP_Text name;
+    private Timer timer;
     public string nameValue = "Player One";
 
 
@@ -76,6 +77,11 @@ public class UIManager : Singleton<UIManager>
             {
                 playerLifes[i].gameObject.SetActive(false);
             }
+        }
+
+        if(currentLifes == 0){
+            timer = GameObject.Find("Canvas").GetComponent<Timer>();
+            timer.Finish();
         }
     }
     
