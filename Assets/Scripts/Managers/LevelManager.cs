@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class LevelManager : MonoBehaviour
     /// 
     /// </summary>
     public static Action<PlayerMotor> OnPlayerSpawn;
+
+    public GameObject pauseMenu;
+    public Timer timer;
 
     [Header("Settings")]
     [SerializeField] private Transform levelStartPoint;
@@ -16,13 +20,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int startingLevel = 0;
     [SerializeField] private Level[] levels;
     
+    private int startingSceneIndex;
     private PlayerMotor _currentPlayer;
     private int _nextLevel;
 
     private void Awake()
     {
+        startingSceneIndex = SceneManager.GetActiveScene().buildIndex;
         InitLevel(startingLevel);
         SpawnPlayer(playerPrefab, levels[startingLevel].SpawnPoint);
+        pauseMenu.SetActive(false);
     }
 
     private void Start()
@@ -39,8 +46,31 @@ public class LevelManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Time.timeScale = 1 - Time.timeScale;
+            bool isPaused = !pauseMenu.activeSelf;
+
+            if(isPaused)
+            {
+                Time.timeScale = 0f;
+                pauseMenu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+            }
         }
+    }
+
+    public void ContinueButton() {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
+    public void QuitButton() {
+        Time.timeScale = 1f;
+        timer.ResetTimer();
+        Destroy(Timer.Instance.gameObject);
+        SceneManager.LoadScene(startingSceneIndex);
     }
 
     private void InitLevel(int levelIndex)

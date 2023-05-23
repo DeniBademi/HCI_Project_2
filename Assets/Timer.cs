@@ -42,6 +42,12 @@ public class Timer : MonoBehaviour
         isRunning = false;
     }
 
+    public void ResetTimer()
+    {
+        textTimer.color = Color.white;
+        StartTimer();
+    }
+
     void Start()
     {
         //The time starts counting even in the StartingMenu because the
@@ -53,6 +59,8 @@ public class Timer : MonoBehaviour
             checkpointCollider = checkpointObj.GetComponent<BoxCollider2D>();
         }
     }
+
+
 
     private void Update()
     {
