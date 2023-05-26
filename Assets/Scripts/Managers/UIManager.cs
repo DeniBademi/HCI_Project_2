@@ -13,6 +13,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private GameObject[] playerLifes;
     public TMP_Text name;
     private Timer timer;
+    private GameOver end;
     public string nameValue = "Player One";
 
 
@@ -60,6 +61,16 @@ public class UIManager : Singleton<UIManager>
     {
         coinTMP.text = CoinManager.Instance.TotalCoins.ToString();
     }
+
+    private GameObject FindInactiveObj(string objectStr){
+        GameObject[] objects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject currentObject in objects){
+            if (currentObject.name == objectStr && !currentObject.activeInHierarchy){
+                return currentObject;
+            }
+        }
+        return null;
+    }
     
     /// <summary>
     /// Updates the player lifes
@@ -82,6 +93,10 @@ public class UIManager : Singleton<UIManager>
         if(currentLifes == 0){
             timer = GameObject.Find("Canvas").GetComponent<Timer>();
             timer.Finish();
+            GameObject inactiveObj = FindInactiveObj("GameOverMenu");
+            inactiveObj.SetActive(true);
+            end = GameObject.Find("GameOverMenu").GetComponent<GameOver>();
+            end.EndGameLogic();
         }
     }
     

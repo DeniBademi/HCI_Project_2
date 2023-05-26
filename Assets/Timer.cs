@@ -78,6 +78,10 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public float timeTaken(){
+        return Time.time - startTime;
+    }
+
     public void Finish(){
         StopTimer();
         textTimer.color = Color.red;

@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject pauseMenu;
     public Timer timer;
+    public GameObject end;
 
     [Header("Settings")]
     [SerializeField] private Transform levelStartPoint;
@@ -30,6 +31,7 @@ public class LevelManager : MonoBehaviour
         InitLevel(startingLevel);
         SpawnPlayer(playerPrefab, levels[startingLevel].SpawnPoint);
         pauseMenu.SetActive(false);
+        end.SetActive(false);
     }
 
     private void Start()
