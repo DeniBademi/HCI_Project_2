@@ -14,7 +14,7 @@ public class UIManager : Singleton<UIManager>
     public TMP_Text name;
     private Timer timer;
     private GameOver end;
-    public string nameValue = "Player One";
+    public string nameValue;
 
 
     [Header("Coins")] 
@@ -25,6 +25,9 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
+        var savedName = PlayerPrefs.GetString("playerName");
+        nameValue = savedName ?? "Player One";
+
         name.text = "Name:" + nameValue;
     }
     
@@ -99,7 +102,12 @@ public class UIManager : Singleton<UIManager>
             end.EndGameLogic();
         }
     }
-    
+
+    public void SaveUsername(string newName)
+    {
+        nameValue = newName;
+    }
+
     private void OnEnable()
     {
         Health.OnLifesChanged += OnPlayerLifes;

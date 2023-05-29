@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public class HighScoreEntry
+{
+    public string playerName;
+    public int score;
+}
+
 public class HighScoreManager : Singleton<HighScoreManager>
 {
-
-
-    private const string HighScoreKey = "HighScores";
+    private const string HighScoreKey = "HighScoresNew";
     private const int MaxHighScores = 5;
     private DateTime startTime;
 
@@ -19,19 +25,27 @@ public class HighScoreManager : Singleton<HighScoreManager>
     public void AddHighScore(int score)
     {
 
+        string playerName = UIManager.Instance.nameValue;
         // Load existing high scores from PlayerPrefs
-        List<int> highScores = new List<int>();
+        List<HighScoreEntry> highScores = new List<HighScoreEntry>();
         if (PlayerPrefs.HasKey(HighScoreKey))
         {
             string raw = PlayerPrefs.GetString(HighScoreKey);
             highScores = StringToList(raw);
         }
 
-        // Add the new score to the list
-        highScores.Add(score);
+        // Create a new HighScoreEntry and assign the player name and score
+        HighScoreEntry newEntry = new HighScoreEntry
+        {
+            playerName = playerName,
+            score = score
+        };
+
+        // Add the new entry to the list
+        highScores.Add(newEntry);
 
         // Sort the high scores in descending order
-        highScores.Sort((a, b) => b.CompareTo(a));
+        highScores.Sort((a, b) => b.score.CompareTo(a.score));
 
         // Keep only the top 5 high scores
         if (highScores.Count > MaxHighScores)
@@ -42,33 +56,42 @@ public class HighScoreManager : Singleton<HighScoreManager>
         // Save the updated high scores to PlayerPrefs
         string highScoreString = ListToString(highScores);
         PlayerPrefs.SetString(HighScoreKey, highScoreString);
-        PlayerPrefs.Save();
     }
 
-    private List<int> StringToList(string value)
+    private List<HighScoreEntry> StringToList(string value)
     {
-        string[] scoreStrings = value.Split(',');
-        List<int> scores = new List<int>();
-        foreach (string scoreString in scoreStrings)
+        string[] entryStrings = value.Split(';');
+        List<HighScoreEntry> entries = new List<HighScoreEntry>();
+        foreach (string entryString in entryStrings)
         {
-            int score;
-            if (int.TryParse(scoreString, out score))
+            string[] entryData = entryString.Split(',');
+            if (entryData.Length == 2)
             {
-                scores.Add(score);
+                string playerName = entryData[0];
+                int score;
+                if (int.TryParse(entryData[1], out score))
+                {
+                    HighScoreEntry entry = new HighScoreEntry
+                    {
+                        playerName = playerName,
+                        score = score
+                    };
+                    entries.Add(entry);
+                }
             }
         }
-        return scores;
+        return entries;
     }
 
-    private string ListToString(List<int> list)
+    private string ListToString(List<HighScoreEntry> list)
     {
         string value = string.Empty;
         for (int i = 0; i < list.Count; i++)
         {
-            value += list[i].ToString();
+            value += list[i].playerName + "," + list[i].score.ToString();
             if (i < list.Count - 1)
             {
-                value += ",";
+                value += ";";
             }
         }
         return value;
@@ -77,5 +100,18 @@ public class HighScoreManager : Singleton<HighScoreManager>
     public void SetStartTime()
     {
         startTime = DateTime.Now;
+    }
+
+    public List<HighScoreEntry> GetHighScores()
+    {
+        if (PlayerPrefs.HasKey(HighScoreKey))
+        {
+            string raw = PlayerPrefs.GetString(HighScoreKey);
+            return StringToList(raw);
+        }
+        else
+        {
+            return new List<HighScoreEntry>();
+        }
     }
 }

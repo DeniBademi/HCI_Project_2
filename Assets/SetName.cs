@@ -18,7 +18,10 @@ public class SetName : MonoBehaviour
         
     }
 
-    public void ReadStringInput(string name){
+    public void ReadStringInput(string name)
+    {
         input = name;
+        UIManager.Instance.nameValue = name;
+        PlayerPrefs.SetString("playerName", name);
     }
 }
