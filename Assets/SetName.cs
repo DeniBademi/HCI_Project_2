@@ -22,6 +22,7 @@ public class SetName : MonoBehaviour
     {
         input = name;
         UIManager.Instance.nameValue = name;
+        UIManager.Instance.UpdateName();
         PlayerPrefs.SetString("playerName", name);
     }
 }

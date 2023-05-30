@@ -16,10 +16,13 @@ public class HighScoreManager : Singleton<HighScoreManager>
     private const string HighScoreKey = "HighScoresNew";
     private const int MaxHighScores = 5;
     private DateTime startTime;
+    public int currentCoins = 0;
 
     public int CalculateScore() {
-        var time = (DateTime.Now - startTime).TotalSeconds;
-        return CoinManager.Instance.TotalCoins / ((int)time / 10);
+        var time = Timer.Instance.timeTaken();
+        Debug.Log("Total coins: " + currentCoins);
+        Debug.Log((int)Mathf.Round(currentCoins / (time)));
+        return (int)Mathf.Round(currentCoins / (time));
     }
 
     public void AddHighScore(int score)

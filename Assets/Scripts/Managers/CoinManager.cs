@@ -23,6 +23,7 @@ public class CoinManager : Singleton<CoinManager>
     private void LoadCoins()
     {
         TotalCoins = PlayerPrefs.GetInt(COINS_KEY, 0);
+        HighScoreManager.Instance.currentCoins = TotalCoins;
     }
     
     /// <summary>
@@ -32,6 +33,7 @@ public class CoinManager : Singleton<CoinManager>
     public void AddCoins(int amount)
     {
         TotalCoins += amount;
+        HighScoreManager.Instance.currentCoins = TotalCoins;
         
         PlayerPrefs.SetInt(COINS_KEY, TotalCoins);
         PlayerPrefs.Save();

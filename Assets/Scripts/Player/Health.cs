@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public static Action<PlayerMotor> OnDeath;
     public static Action<PlayerMotor> OnRevive;
     
+    
     [Header("Settings")] 
     [SerializeField] private int lifes = 3;
 
@@ -33,7 +34,7 @@ public class Health : MonoBehaviour
     private void Start()
     {
         ResetLife();
-        HighScoreManager.Instance.SetStartTime();
+        
     }
 
     private void Update()
@@ -80,8 +81,11 @@ public class Health : MonoBehaviour
         _currentLifes = 0;
         UpdateLifesUI();
         OnDeath?.Invoke(gameObject.GetComponent<PlayerMotor>());
-        HighScoreManager.Instance.AddHighScore(CoinManager.Instance.TotalCoins);
-        CoinManager.Instance.ResetCoins();
+        //HighScoreManager.Instance.AddHighScore(CoinManager.Instance.TotalCoins);
+        var score = HighScoreManager.Instance.CalculateScore();
+        Debug.Log("Score: " + score);
+        HighScoreManager.Instance.AddHighScore(score);
+        //CoinManager.Instance.ResetCoins();
     }
     
     /// <summary>

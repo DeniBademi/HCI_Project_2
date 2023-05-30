@@ -30,6 +30,11 @@ public class UIManager : Singleton<UIManager>
 
         name.text = "Name:" + nameValue;
     }
+
+    public void UpdateName()
+    {
+        name.text = "Name:" + nameValue;
+    }
     
     private void Update()
     {

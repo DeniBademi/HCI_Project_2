@@ -18,5 +18,6 @@ public class CCoin : Collectable
     private void AddCoin()
     {
         CoinManager.Instance.AddCoins(amountToAdd);
+        Debug.Log("Coin Added");
     }
 }
