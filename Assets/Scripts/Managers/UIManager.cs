@@ -26,14 +26,15 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         var savedName = PlayerPrefs.GetString("playerName");
-        nameValue = savedName ?? "Player One";
 
-        name.text = "Name:" + nameValue;
+        nameValue = savedName.Length>0 ? savedName : "Player One";
+
+        name.text = "Name: " + nameValue;
     }
 
     public void UpdateName()
     {
-        name.text = "Name:" + nameValue;
+        name.text = "Name: " + nameValue;
     }
     
     private void Update()
