@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc36376ede9fb840bc6ab05e8245947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  end: {fileID: 0}
   levelIndex: 0
 --- !u!1 &3384171213786446987
 GameObject:
@@ -246,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 5718151156569354785}
+  isFinalLevel: 0
 --- !u!1 &4659287143563137223
 GameObject:
   m_ObjectHideFlags: 0

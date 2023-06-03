@@ -75,6 +75,24 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(startingSceneIndex);
     }
 
+    public void RestartButton()
+    {
+        end.SetActive(false);
+
+        if(_currentPlayer != null && levels.Length > 0 )
+        {
+            _currentPlayer.gameObject.SetActive(true);
+            _currentPlayer.SpawnPlayer(levels[0].SpawnPoint);
+            _currentPlayer.GetComponent<Health>().ResetLife();
+            _currentPlayer.GetComponent<Health>().Revive();
+        }
+        if (timer != null)
+        {
+            timer.ResetTimer();
+        }
+        InitLevel(0);
+    }
+
     private void InitLevel(int levelIndex)
     {
         foreach (Level level in levels)

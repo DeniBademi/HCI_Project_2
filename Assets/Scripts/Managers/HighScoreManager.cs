@@ -20,9 +20,7 @@ public class HighScoreManager : Singleton<HighScoreManager>
 
     public int CalculateScore() {
         var time = Timer.Instance.timeTaken();
-        Debug.Log("Total coins: " + currentCoins);
-        Debug.Log((int)Mathf.Round(currentCoins / (time)));
-        return (int)Mathf.Round(currentCoins / (time));
+        return (int)Mathf.Round(currentCoins / (time) * 10);
     }
 
     public void AddHighScore(int score)
