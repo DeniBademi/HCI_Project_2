@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
@@ -16,7 +13,7 @@ public class Collectable : MonoBehaviour
     }
 
     /// <summary>
-    /// Contains the logic of the colletable 
+    /// Contains the logic of the collectable 
     /// </summary>
     private void CollectLogic()
     {
@@ -24,37 +21,46 @@ public class Collectable : MonoBehaviour
         {
             return;
         }
-        
+
         Collect();
         DisableCollectable();
     }
 
     /// <summary>
-    /// Override to add custom colletable behaviour
+    /// Override to add custom collectable behavior
     /// </summary>
     protected virtual void Collect()
     {
-        
+
     }
 
     /// <summary>
-    /// Disable the spriteRenderer and collider of the Collectable
+    /// Disable the spriteRenderer and collider of the collectable
     /// </summary>
     private void DisableCollectable()
     {
         _collider2D.enabled = false;
         _spriteRenderer.enabled = false;
     }
-    
+
     /// <summary>
-    /// Returns if this colletable can pe picked, True if it is colliding with the player
+    /// Resets the collectable by enabling its collider and sprite renderer
+    /// </summary>
+    public void ResetCollectable()
+    {
+        _collider2D.enabled = true;
+        _spriteRenderer.enabled = true;
+    }
+
+    /// <summary>
+    /// Returns if this collectable can be picked, True if it is colliding with the player
     /// </summary>
     /// <returns></returns>
     private bool CanBePicked()
     {
         return _playerMotor != null;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerMotor>() != null)

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class LevelManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour
     private int startingSceneIndex;
     private PlayerMotor _currentPlayer;
     private int _nextLevel;
+    private bool kidModeEnabled = false;
 
     private void Awake()
     {
@@ -79,6 +81,8 @@ public class LevelManager : MonoBehaviour
     {
         end.SetActive(false);
 
+       
+
         if(_currentPlayer != null && levels.Length > 0 )
         {
             _currentPlayer.gameObject.SetActive(true);
@@ -90,7 +94,10 @@ public class LevelManager : MonoBehaviour
         {
             timer.ResetTimer();
         }
-        InitLevel(0);
+
+        InitLevel(0); 
+        ResetCollectables();
+        
     }
 
     private void InitLevel(int levelIndex)
@@ -171,4 +178,45 @@ public class LevelManager : MonoBehaviour
         Health.OnDeath -= PlayerDeath;
         GameManager.LoadNextLevel -= LoadLevel;
     }
+
+    public void ToggleKidMode(bool enabled)
+    {
+        kidModeEnabled = enabled;
+        DisableSpikes(kidModeEnabled);
+    }
+
+    private void DisableSpikes(bool enable)
+    {
+        foreach (Level level in levels)
+        {
+            Transform LevelComponents = level.transform.Find("LevelComponents");
+            if (LevelComponents != null)
+            {
+                foreach (Transform child in LevelComponents)
+                {
+                    child.gameObject.SetActive(enable);
+                }
+            }
+        }
+    }
+
+    private void ResetCollectables()
+    {
+        foreach (Level level in levels)
+        {
+            Transform Collectables = level.transform.Find("Collectables");
+            if (Collectables != null)
+            {
+                foreach (Transform collectableTransform in Collectables)
+                {
+                    Collectable collectable = collectableTransform.GetComponent<Collectable>();
+                    if (collectable != null)
+                    {
+                        collectable.ResetCollectable();
+                    }
+                }
+            }
+        }
+    }
+
 }
