@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class GameOver : MonoBehaviour
     private CoinManager coins;
     private Timer timer;
     private LevelManager level;
+    public TMP_Text score;
     public int finalScore { get; set; }
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,9 @@ public class GameOver : MonoBehaviour
         coins = FindObjectOfType<CoinManager>();
         int numCoins = CoinManager.Instance.TotalCoins;
 
-        finalScore = timeScore + numCoins;
+
+        HighScoreManager.Instance.UpdateLastScore();
+        score.text = "Score: " + HighScoreManager.Instance.GetLastScore().ToString();
         //Debug.Log(finalScore);
         coins.ResetCoins();
     }

@@ -113,8 +113,8 @@ public class LevelManager : MonoBehaviour
         {
             //GameManager.Instance.GameState = GameManager.GameStates.GameOver;
             var score = HighScoreManager.Instance.CalculateScore();
-            Debug.Log("Score: " + score);
-            HighScoreManager.Instance.AddHighScore(score);
+            //Debug.Log("Score: " + score);
+            //HighScoreManager.Instance.AddHighScore(score);
         }
     }
     

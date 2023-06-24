@@ -18,6 +18,8 @@ public class HighScoreManager : Singleton<HighScoreManager>
     private DateTime startTime;
     public int currentCoins = 0;
 
+    private int lastScore = 0;
+
     public int CalculateScore() {
         var time = Timer.Instance.timeTaken();
         return (int)Mathf.Round(currentCoins / (time) * 10);
@@ -114,5 +116,19 @@ public class HighScoreManager : Singleton<HighScoreManager>
         {
             return new List<HighScoreEntry>();
         }
+    }
+
+    public void UpdateLastScore()
+    {
+        this.lastScore = CalculateScore();
+
+        if(GameManager.Instance.CurrentLevelCompleted == 2)
+        {
+            AddHighScore(this.lastScore);
+        }
+    }
+    public int GetLastScore()
+    {
+        return lastScore;
     }
 }

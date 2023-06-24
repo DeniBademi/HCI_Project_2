@@ -82,9 +82,8 @@ public class Health : MonoBehaviour
         UpdateLifesUI();
         OnDeath?.Invoke(gameObject.GetComponent<PlayerMotor>());
         //HighScoreManager.Instance.AddHighScore(CoinManager.Instance.TotalCoins);
-        var score = HighScoreManager.Instance.CalculateScore();
-        Debug.Log("Score: " + score);
-        HighScoreManager.Instance.AddHighScore(score);
+        HighScoreManager.Instance.UpdateLastScore();
+        //HighScoreManager.Instance.AddHighScore(score);
         //CoinManager.Instance.ResetCoins();
     }
     
