@@ -12,7 +12,7 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Image fuelImage;
     [SerializeField] private GameObject[] playerLifes;
     public TMP_Text name;
-    private Timer timer;
+    public Timer timer;
     private GameOver end;
     public string nameValue;
 
@@ -100,8 +100,11 @@ public class UIManager : Singleton<UIManager>
         }
 
         if(currentLifes == 0){
-            timer = GameObject.Find("Canvas").GetComponent<Timer>();
-            timer.Finish();
+            
+             if (timer != null)
+            {
+                timer.Finish();
+            }
             GameObject inactiveObj = FindInactiveObj("GameOverMenu");
             inactiveObj.SetActive(true);
             end = GameObject.Find("GameOverMenu").GetComponent<GameOver>();
