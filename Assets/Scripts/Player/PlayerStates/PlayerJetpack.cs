@@ -30,12 +30,12 @@ public class PlayerJetpack : PlayerStates
 
     protected override void GetInput()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.W))
         {
             Jetpack();
         }
 
-        if (Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.W))
         {
             EndJetpack();
         }
