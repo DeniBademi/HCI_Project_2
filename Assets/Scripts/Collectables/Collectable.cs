@@ -39,6 +39,7 @@ public class Collectable : MonoBehaviour
     /// </summary>
     private void DisableCollectable()
     {
+        
         _collider2D.enabled = false;
         _spriteRenderer.enabled = false;
     }
@@ -48,8 +49,11 @@ public class Collectable : MonoBehaviour
     /// </summary>
     public void ResetCollectable()
     {
-        _collider2D.enabled = true;
-        _spriteRenderer.enabled = true;
+        if (_collider2D!= null)
+            _collider2D.enabled = true;
+
+        if (_spriteRenderer != null)
+            _spriteRenderer.enabled = true;
     }
 
     /// <summary>
